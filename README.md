@@ -1,5 +1,7 @@
 # British Spoken Time Formatter
 
+![Build Status](https://github.com/nihar4154/spoken-time-formatter/actions/workflows/ci.yml/badge.svg)
+
 This Java project converts 24-hour formatted time (like `13:45`) into its equivalent British spoken English form.
 
 ### 🕒 Example Conversions
@@ -48,6 +50,18 @@ This Java project converts 24-hour formatted time (like `13:45`) into its equiva
  ./gradlew run
 ```
 
+Enter a time in HH:mm format (or type 'exit' to quit):
+````
+> 13:45  
+→ quarter to two  
+
+> 00:00  
+→ midnight  
+
+> hello  
+✖ Error: Invalid time format: hello
+````
+You can keep entering inputs, or type exit to quit the program.
 ### ⌨️ Input Format
 Enter time in `HH:mm` 24-hour format (e.g., `13:45`).
 
@@ -95,6 +109,16 @@ Run everything together:
 ```
 ##  ⚠️ Custom Exception
 `InvalidTimeFormatException extends RuntimeException`
+
+## ✅ Continuous Integration
+This project uses **GitHub Actions** for Continuous Integration (CI).  
+Every push or pull request triggers:
+
+- Build (`./gradlew build`)
+- Unit tests (`./gradlew test`)
+- Code quality checks (Checkstyle, PMD, Spotless)
+
+You can view CI runs under the **Actions** tab on GitHub.
 
 ## 🧑‍💻 Author
 Built by Nihar Behera.
