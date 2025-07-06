@@ -1,51 +1,78 @@
-# Java build artifacts
+# ----------------------------------------
+# Java Build Artifacts
+# ----------------------------------------
 /bin/
 /build/
 /out/
 /target/
 
-# Gradle files
+# Ignore compiled .class files
+*.class
+
+# ----------------------------------------
+# Gradle
+# ----------------------------------------
 .gradle/
 **/build/
+
+# Ignore all .jar files...
+*.jar
+
+# ... but keep gradle-wrapper.jar
+!gradle/wrapper/
 !gradle/wrapper/gradle-wrapper.jar
 
-# Eclipse / IntelliJ / VS Code
+# Keep wrapper scripts
+!gradlew
+!gradlew.bat
+
+# ----------------------------------------
+# IntelliJ / VS Code / Eclipse
+# ----------------------------------------
 *.iml
 .idea/
 .vscode/
-*.class
-*.log
+*.ipr
+*.iws
+*.bak
+*.swp
 
+# ----------------------------------------
+# Logs and temporary files
+# ----------------------------------------
+*.log
+*.tmp
+*.pid
+
+# ----------------------------------------
 # OS-specific
+# ----------------------------------------
 .DS_Store
 Thumbs.db
 
-# Logs & generated files
-*.log
-*.tmp
-*.swp
-
-# Coverage & reports
+# ----------------------------------------
+# Coverage & Reports
+# ----------------------------------------
 jacoco.exec
 /build/reports/
 /coverage-report/
 /*.ec
 
-# Checkstyle, PMD, Spotless cache
+# ----------------------------------------
+# PMD, Checkstyle, Spotless
+# ----------------------------------------
 /checkstyle/
 /pmd/
-/spotless.*
+.spotless.*
 
-# Generated files
-*.jar
-*.war
-*.ear
-
-# Ignore test results
+# ----------------------------------------
+# Test Output
+# ----------------------------------------
 /test-results/
 /test-output/
 
-# Environment files (if any)
+# ----------------------------------------
+# Environment / Secrets
+# ----------------------------------------
 .env
 *.local
-*.bak
