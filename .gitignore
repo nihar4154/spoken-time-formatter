@@ -1,0 +1,51 @@
+# Java build artifacts
+/bin/
+/build/
+/out/
+/target/
+
+# Gradle files
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Eclipse / IntelliJ / VS Code
+*.iml
+.idea/
+.vscode/
+*.class
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs & generated files
+*.log
+*.tmp
+*.swp
+
+# Coverage & reports
+jacoco.exec
+/build/reports/
+/coverage-report/
+/*.ec
+
+# Checkstyle, PMD, Spotless cache
+/checkstyle/
+/pmd/
+/spotless.*
+
+# Generated files
+*.jar
+*.war
+*.ear
+
+# Ignore test results
+/test-results/
+/test-output/
+
+# Environment files (if any)
+.env
+*.local
+*.bak
