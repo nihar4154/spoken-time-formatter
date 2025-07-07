@@ -63,18 +63,18 @@ To support other locales, change this value or make it configurable via command-
 
 ##  Project Structure  
 ```
-src/  
-main/  
-java/  
-com.smartbear.britishtime/  
-                        cli/         # CLI and Main class  
-                        config/      # Spring configuration  
-                        exception/   # Custom exceptions  
-                        formatter/   # Spoken time formatters (per locale)  
-                        service/     # Service layer  
-                        util/        # Utilities (e.g., number to words)  
-                    test/  
-                    java/            # Unit tests  
+src/
+  main/
+    java/
+      com.smartbear.britishtime/
+        cli/         # CLI and Main class
+        config/      # Spring configuration
+        exception/   # Custom exceptions
+        formatter/   # Spoken time formatters (per locale)
+        service/     # Service layer
+        util/        # Utilities (e.g., number to words)
+  test/
+    java/            # Unit tests
 
 ```
 
