@@ -27,8 +27,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Run tests
-        run: ./gradlew test
+      - name: Run Tests with Coverage
+        run: ./gradlew test jacocoTestReport
 
-      - name: Run code quality checks (Checkstyle, PMD, Spotless)
-        run: ./gradlew check
+      - name: Upload JaCoCo HTML Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: build/reports/jacoco/html

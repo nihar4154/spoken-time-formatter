@@ -1,5 +1,6 @@
 package com.example.time.formatter;
 
+import com.example.time.exception.InvalidTimeFormatException;
 import com.example.time.util.NumberToWords;
 import java.time.LocalTime;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,10 @@ public class BritishTimeFormatter implements SpokenTimeFormatter {
 
   @Override
   public String format(LocalTime time) {
+    if (time == null) {
+      throw new InvalidTimeFormatException("Time cannot be null");
+    }
+
     final int hour = time.getHour();
     final int minute = time.getMinute();
 
