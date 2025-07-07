@@ -4,6 +4,9 @@ import com.smartbear.britishtime.util.NumberToWords;
 import java.time.LocalTime;
 import org.springframework.stereotype.Component;
 
+/**
+ * Formats time as spoken British English, handling cases like midnight, noon, and common phrases.
+ */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 @Component
 public class BritishTimeFormatter implements SpokenTimeFormatter {
