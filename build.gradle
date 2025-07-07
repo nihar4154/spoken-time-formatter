@@ -6,7 +6,7 @@ plugins {
     id 'pmd'
 }
 
-group = 'com.smaartbear'
+group = 'com.example'
 version = '1.0.0'
 
 java {
@@ -45,9 +45,9 @@ jacocoTestReport {
     }
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect { fileTree(dir: it, exclude: [
-                'com/smartbear/britishtime/cli/Main.class',
-                'com/smartbear/britishtime/config/AppConfig.class',
-                'com/smartbear/britishtime/cli/CommandLineInterface.class'
+                'com/example/time/cli/Main.class',
+                'com/example/time/config/AppConfig.class',
+                'com/example/time/cli/CommandLineInterface.class'
         ]) }))
     }
 }
@@ -62,9 +62,9 @@ jacocoTestCoverageVerification {
     }
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect { fileTree(dir: it, exclude: [
-                'com/smartbear/britishtime/cli/Main.class',
-                'com/smartbear/britishtime/config/AppConfig.class',
-                'com/smartbear/britishtime/cli/CommandLineInterface.class'
+                'com/example/time/cli/Main.class',
+                'com/example/time/config/AppConfig.class',
+                'com/example/time/cli/CommandLineInterface.class'
         ]) }))
     }
 }

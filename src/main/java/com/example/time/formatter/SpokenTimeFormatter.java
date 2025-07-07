@@ -1,4 +1,4 @@
-package com.smartbear.britishtime.formatter;
+package com.example.time.formatter;
 
 import java.time.LocalTime;
 

@@ -1,6 +1,6 @@
-package com.smartbear.britishtime.formatter;
+package com.example.time.formatter;
 
-import com.smartbear.britishtime.util.NumberToWords;
+import com.example.time.util.NumberToWords;
 import java.time.LocalTime;
 import org.springframework.stereotype.Component;
 

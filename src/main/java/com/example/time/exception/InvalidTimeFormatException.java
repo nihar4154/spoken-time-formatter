@@ -1,4 +1,4 @@
-package com.smartbear.britishtime.exception;
+package com.example.time.exception;
 
 public class InvalidTimeFormatException extends RuntimeException {
 

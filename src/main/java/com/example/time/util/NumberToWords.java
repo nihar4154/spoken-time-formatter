@@ -1,4 +1,4 @@
-package com.smartbear.britishtime.util;
+package com.example.time.util;
 
 /** Utility to convert numbers (0–59) into their English word representation. */
 public final class NumberToWords {

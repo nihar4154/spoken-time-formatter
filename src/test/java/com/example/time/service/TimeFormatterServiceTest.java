@@ -1,10 +1,10 @@
-package com.smartbear.britishtime.service;
+package com.example.time.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.smartbear.britishtime.exception.InvalidTimeFormatException;
-import com.smartbear.britishtime.formatter.BritishTimeFormatter;
-import com.smartbear.britishtime.formatter.SpokenTimeFormatter;
+import com.example.time.exception.InvalidTimeFormatException;
+import com.example.time.formatter.BritishTimeFormatter;
+import com.example.time.formatter.SpokenTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;

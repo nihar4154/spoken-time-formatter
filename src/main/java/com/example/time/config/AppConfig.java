@@ -1,8 +1,8 @@
-package com.smartbear.britishtime.config;
+package com.example.time.config;
 
-import com.smartbear.britishtime.formatter.BritishTimeFormatter;
-import com.smartbear.britishtime.formatter.SpokenTimeFormatter;
-import com.smartbear.britishtime.service.TimeFormatterService;
+import com.example.time.formatter.BritishTimeFormatter;
+import com.example.time.formatter.SpokenTimeFormatter;
+import com.example.time.service.TimeFormatterService;
 import java.util.Map;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

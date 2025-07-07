@@ -1,7 +1,7 @@
-package com.smartbear.britishtime.cli;
+package com.example.time.cli;
 
-import com.smartbear.britishtime.exception.InvalidTimeFormatException;
-import com.smartbear.britishtime.service.TimeFormatterService;
+import com.example.time.exception.InvalidTimeFormatException;
+import com.example.time.service.TimeFormatterService;
 import java.util.Scanner;
 
 public class CommandLineInterface {

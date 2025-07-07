@@ -66,7 +66,7 @@ To support other locales, change this value or make it configurable via command-
 src/
   main/
     java/
-      com.smartbear.britishtime/
+      com.example.time/
         cli/         # CLI and Main class
         config/      # Spring configuration
         exception/   # Custom exceptions
