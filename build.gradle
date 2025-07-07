@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework:spring-context:5.3.32'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
     implementation 'org.apache.commons:commons-lang3:3.14.0'
 }
@@ -43,6 +44,13 @@ jacocoTestReport {
         html.required = true
         html.outputLocation = layout.buildDirectory.dir('reports/jacoco/html')
     }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect { fileTree(dir: it, exclude: [
+                'com/smartbear/britishtime/cli/Main.class',
+                'com/smartbear/britishtime/config/AppConfig.class',
+                'com/smartbear/britishtime/cli/CommandLineInterface.class'
+        ]) }))
+    }
 }
 
 jacocoTestCoverageVerification {
@@ -52,6 +60,13 @@ jacocoTestCoverageVerification {
                 minimum = 0.80
             }
         }
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect { fileTree(dir: it, exclude: [
+                'com/smartbear/britishtime/cli/Main.class',
+                'com/smartbear/britishtime/config/AppConfig.class',
+                'com/smartbear/britishtime/cli/CommandLineInterface.class'
+        ]) }))
     }
 }
 

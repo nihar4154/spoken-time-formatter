@@ -2,8 +2,10 @@ package com.smartbear.britishtime.formatter;
 
 import com.smartbear.britishtime.util.NumberToWords;
 import java.time.LocalTime;
+import org.springframework.stereotype.Component;
 
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
+@Component
 public class BritishTimeFormatter implements SpokenTimeFormatter {
 
   private static final int MIDNIGHT_HOUR = 0;
