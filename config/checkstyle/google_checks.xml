@@ -17,6 +17,7 @@
         </module>
         <module name="NeedBraces"/>
         <module name="FinalLocalVariable"/>
+        <module name="AvoidStarImport"/>
     </module>
 
 
