@@ -56,7 +56,7 @@ Currently, the locale is hardcoded in Main.java (final String locale = "british"
 To support other locales, change this value or make it configurable via command-line arguments.
 
 ## Dependencies
-- Java 11+, Spring Context, Gradle, JUnit 5, Apache Commons Lang
+- Java 11+, Spring Context, Gradle, JUnit 5
 - Checkstyle, PMD, Spotless, Jacoco
 
 ---
