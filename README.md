@@ -40,7 +40,7 @@ To run tests and check code quality:
 ./gradlew jacocoTestReport
 ./gradlew check
 ```
-### Code Coverage Report: ``build/reports/jacoco/html/index.html``
+### [View JaCoCo Test Coverage Report](https://nihar4154.github.io/spoken-time-formatter/)
 <hr></hr>
 
 ## Multi-Locale Support  
