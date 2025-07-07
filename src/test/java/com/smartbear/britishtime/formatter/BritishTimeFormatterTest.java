@@ -1,4 +1,4 @@
-package com.smartbear.britishtime.core;
+package com.smartbear.britishtime.formatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 

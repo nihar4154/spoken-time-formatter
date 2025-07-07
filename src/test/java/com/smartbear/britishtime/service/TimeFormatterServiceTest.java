@@ -2,9 +2,9 @@ package com.smartbear.britishtime.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.smartbear.britishtime.core.BritishTimeFormatter;
-import com.smartbear.britishtime.core.SpokenTimeFormatter;
 import com.smartbear.britishtime.exception.InvalidTimeFormatException;
+import com.smartbear.britishtime.formatter.BritishTimeFormatter;
+import com.smartbear.britishtime.formatter.SpokenTimeFormatter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

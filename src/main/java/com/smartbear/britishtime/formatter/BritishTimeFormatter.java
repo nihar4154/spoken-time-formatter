@@ -1,4 +1,4 @@
-package com.smartbear.britishtime.core;
+package com.smartbear.britishtime.formatter;
 
 import com.smartbear.britishtime.util.NumberToWords;
 import java.time.LocalTime;

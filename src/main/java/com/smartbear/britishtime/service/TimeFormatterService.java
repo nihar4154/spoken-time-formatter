@@ -1,7 +1,7 @@
 package com.smartbear.britishtime.service;
 
-import com.smartbear.britishtime.core.SpokenTimeFormatter;
 import com.smartbear.britishtime.exception.InvalidTimeFormatException;
+import com.smartbear.britishtime.formatter.SpokenTimeFormatter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;

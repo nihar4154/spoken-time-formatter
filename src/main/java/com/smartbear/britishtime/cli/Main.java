@@ -1,8 +1,8 @@
 package com.smartbear.britishtime.cli;
 
-import com.smartbear.britishtime.core.BritishTimeFormatter;
-import com.smartbear.britishtime.core.SpokenTimeFormatter;
 import com.smartbear.britishtime.exception.InvalidTimeFormatException;
+import com.smartbear.britishtime.formatter.SpokenTimeFormatter;
+import com.smartbear.britishtime.formatter.TimeFormatterFactory;
 import com.smartbear.britishtime.service.TimeFormatterService;
 import java.util.Scanner;
 
@@ -10,7 +10,9 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
-    final SpokenTimeFormatter formatter = new BritishTimeFormatter();
+
+    final String locale = "british"; // This can be changed to support different locales
+    final SpokenTimeFormatter formatter = TimeFormatterFactory.getFormatter(locale);
     final TimeFormatterService service = new TimeFormatterService(formatter);
 
     final Scanner scanner = new Scanner(System.in);
@@ -27,9 +29,9 @@ public class Main {
 
       try {
         final String spokenTime = service.format(input);
-        System.out.println("→ " + spokenTime);
+        System.out.println(spokenTime);
       } catch (InvalidTimeFormatException e) {
-        System.out.println("✖ Error: " + e.getMessage());
+        System.out.println("Error: " + e.getMessage());
       }
     }
 
