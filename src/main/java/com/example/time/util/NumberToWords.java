@@ -1,13 +1,17 @@
 package com.example.time.util;
 
-/** Utility to convert numbers (0–59) into their English word representation. */
+/**
+ * Converts minute/hour numbers (0-59) to English words. Precomputes all values during class
+ * initialization for O(1) runtime lookup.
+ */
 public final class NumberToWords {
 
-  private static final int LOWER_BOUND = 0;
-  private static final int UPPER_BOUND = 59;
-  private static final int TWENTY = 20;
-  private static final int TEN = 10;
+  // Range configuration
+  private static final int MIN_VALUE = 0;
+  private static final int MAX_VALUE = 59;
+  private static final int TWENTY_START = 20;
 
+  // Vocabulary definitions
   private static final String[] BELOW_TWENTY = {
     "zero",
     "one",
@@ -31,37 +35,51 @@ public final class NumberToWords {
     "nineteen"
   };
 
-  private static final String[] TENS = {"", "", "twenty", "thirty", "forty", "fifty"};
+  private static final String[] TENS = {
+    null, null, // Unused for 0-9
+    "twenty", "thirty", "forty", "fifty"
+  };
 
-  // Prevent instantiation
+  // Precomputed word mappings
+  private static final String[] NUMBER_WORDS = new String[MAX_VALUE - MIN_VALUE + 1];
+
+  // Error message template
+  private static final String ERROR_TEMPLATE =
+      "Invalid number: %d. Must be between %d and %d inclusive.";
+
+  static {
+    // Initialize 0-19
+    System.arraycopy(BELOW_TWENTY, 0, NUMBER_WORDS, 0, BELOW_TWENTY.length);
+
+    // Initialize 20-59
+    for (int num = TWENTY_START; num <= MAX_VALUE; num++) {
+      final int tensDigit = num / 10;
+      final int unitsDigit = num % 10;
+
+      final String tensWord = TENS[tensDigit];
+
+      if (unitsDigit == 0) {
+        NUMBER_WORDS[num] = tensWord; // Exact tens
+      } else {
+        NUMBER_WORDS[num] = tensWord + " " + BELOW_TWENTY[unitsDigit]; // Composite
+      }
+    }
+  }
+
   private NumberToWords() {}
 
   /**
-   * Converts a number between 0 and 59 to its English spoken form.
+   * Converts a number to its English spoken form.
    *
-   * @param number the number to convert (must be between 0 and 59)
-   * @return the number in English words (e.g. 42 → "forty two")
-   * @throws IllegalArgumentException if the number is outside [0, 59]
+   * @param number Value between 0-59 (inclusive)
+   * @return English words representation
+   * @throws IllegalArgumentException for invalid numbers
    */
   public static String convert(int number) {
-    if (number < LOWER_BOUND || number > UPPER_BOUND) {
+    if (number < MIN_VALUE || number > MAX_VALUE) {
       throw new IllegalArgumentException(
-          "Number out of range: "
-              + number
-              + ". Must be between "
-              + LOWER_BOUND
-              + " and "
-              + UPPER_BOUND
-              + ".");
+          String.format(ERROR_TEMPLATE, number, MIN_VALUE, MAX_VALUE));
     }
-
-    if (number < TWENTY) {
-      return BELOW_TWENTY[number];
-    }
-
-    final int tens = number / TEN;
-    final int ones = number % TEN;
-
-    return ones == 0 ? TENS[tens] : TENS[tens] + " " + BELOW_TWENTY[ones];
+    return NUMBER_WORDS[number];
   }
 }
